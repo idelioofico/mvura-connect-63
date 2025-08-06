@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 
-export function NotFound() {
+function NotFound() {
   const navigate = useNavigate()
 
   return (
@@ -16,3 +16,5 @@ export function NotFound() {
     </div>
   )
 }
+
+export default NotFound
