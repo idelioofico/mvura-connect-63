@@ -128,6 +128,39 @@ const TicketDetailsModal = ({ ticket, isOpen, onClose }: TicketDetailsModalProps
             <p>Nome: {ticket.assignedTo.name}</p>
             <p>Email: {ticket.assignedTo.email}</p>
           </div>
+          
+          {/* Seção de Imagem */}
+          {ticket.imageUrl && (
+            <div>
+              <h3 className="font-semibold">Imagem</h3>
+              <div className="mt-2">
+                <img 
+                  src={ticket.imageUrl} 
+                  alt="Imagem do ticket" 
+                  className="max-w-full h-auto rounded-lg border border-border max-h-64 object-contain"
+                />
+              </div>
+            </div>
+          )}
+          
+          {/* Seção de Localização */}
+          {(ticket.latitude && ticket.longitude) && (
+            <div>
+              <h3 className="font-semibold">Localização</h3>
+              <div className="mt-2 space-y-1">
+                <p>Latitude: {ticket.latitude}</p>
+                <p>Longitude: {ticket.longitude}</p>
+                <a 
+                  href={`https://maps.google.com/?q=${ticket.latitude},${ticket.longitude}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-primary hover:text-primary/80 text-sm"
+                >
+                  Ver no Google Maps →
+                </a>
+              </div>
+            </div>
+          )}
           <div>
             <h3 className="font-semibold">Comentários</h3>
             <div className="space-y-2">

@@ -50,6 +50,9 @@ export interface Ticket {
   priority: 'low' | 'medium' | 'high';
   clientId: string;
   assignedToId?: string;
+  imageUrl?: string;
+  latitude?: number;
+  longitude?: number;
   createdAt: string;
   updatedAt: string;
 }
