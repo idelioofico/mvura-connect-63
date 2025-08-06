@@ -1,5 +1,3 @@
-import { User, Client, Ticket, Comment } from '@prisma/client'
-
 export type UserRole = 'admin' | 'atendente';
 
 export interface User {
@@ -111,4 +109,4 @@ export interface ReportData {
   ticketsByPriority: Record<string, number>
   averageResolutionTime: number
   ticketsByAttendant: Record<string, number>
-} 
+}
